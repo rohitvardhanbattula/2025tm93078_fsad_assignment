@@ -1,9 +1,7 @@
-// server.js
 const express = require('express');
 const cors = require('cors');
 require('dotenv').config();
 
-// Initialize DB Connections
 require('./config/db');
 
 const app = express();
@@ -11,8 +9,9 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Routes
 app.use('/api/auth', require('./routes/authRoutes'));
+app.use('/api/gigs', require('./routes/gigRoutes'));
+app.use('/api/bookings', require('./routes/bookingRoutes'));
 
 app.get('/api/health', (req, res) => {
     res.status(200).json({ status: 'OK', message: 'Campus Hub API Gateway is active' });
