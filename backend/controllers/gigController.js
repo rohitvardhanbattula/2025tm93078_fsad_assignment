@@ -37,3 +37,13 @@ exports.getGigs = async (req, res) => {
         res.status(500).json({ message: 'Server Error' });
     }
 };
+
+
+exports.deleteGig = async (req, res) => {
+    try {
+        await Gig.findByIdAndDelete(req.params.id);
+        res.status(200).json({ message: 'Gig deleted successfully' });
+    } catch (error) {
+        res.status(500).json({ message: 'Server Error' });
+    }
+};
