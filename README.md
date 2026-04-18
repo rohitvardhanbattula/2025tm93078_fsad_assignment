@@ -1,6 +1,6 @@
 # 🎓 Campus Freelance & Skill-Share Hub
 
-**▶️ [Watch the Full Demonstration Video Here](#) *(Replace the '#' with your Google Drive Link)***
+**▶️ [Watch the Full Demonstration Video Here](#) *(https://drive.google.com/file/d/1TR53lLdYrr64lk-LZ1IyA53p6O5WrggZ/view?usp=sharing)***
 
 ---
 
