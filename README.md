@@ -1,17 +1,17 @@
-# Campus Freelance & Skill-Share Hub
+# 🎓 Campus Freelance & Skill-Share Hub
 
-**[Watch the Full Demonstration Video Here](#) *(Replace the '#' with your Google Drive Link)***
+**▶️ [Watch the Full Demonstration Video Here](#) *(Replace the '#' with your Google Drive Link)***
 
 ---
 
-## 1. Problem Statement
+## 🎯 1. Problem Statement
 **The Challenge:** University students frequently possess valuable skills (tutoring, graphic design, coding assistance) but lack a centralized, secure, and campus-specific platform to market these skills. Current solutions rely on fragmented WhatsApp groups or physical notice boards, leading to unverified profiles, lost booking requests, and poor skill-matching.
 
 **The Solution:** The Campus Hub is a polyglot microservice application that acts as a secure marketplace. It allows students to authenticate securely, dynamically list their skills (Gigs), and officially book services from peers. It prevents self-booking, manages dual-database transactions, and provides real-time UI feedback.
 
 ---
 
-## 2. System Architecture & Tech Stack
+## 🏗️ 2. System Architecture & Tech Stack
 
 This project utilizes a **Polyglot Persistence** strategy, separating strict relational data from flexible document data to optimize performance and scalability.
 
@@ -29,6 +29,7 @@ graph TD
     Client <-->|Axios: HTTP/REST & JWT| Gateway
     Gateway <-->|pg driver| Postgres
     Gateway <-->|mongoose| Mongo
+```
 💾 3. Polyglot Database Schemas
 Relational Schema (PostgreSQL)
 Handles strict transactional relationships, financial ledgers, and user authentication. Ensures ACID compliance.
@@ -68,7 +69,7 @@ JSON
   "hourly_rate": "Number",
   "is_active": "Boolean"
 }
-4. Frontend Component Hierarchy
+🖥️ 4. Frontend Component Hierarchy
 The React frontend is structured to maintain a strict separation of concerns between routing, state management, and UI presentation.
 
 Plaintext
@@ -104,7 +105,7 @@ DELETE /api/gigs/:id: Deletes document by MongoDB _id (Requires Ownership). Retu
 Booking Service (Cross-Database Transaction)
 POST /api/bookings: Expects {gig_id, client_id, freelancer_id, scheduled_date, notes}. Returns 201.
 
-6. Architectural & Development Assumptions
+🧠 6. Architectural & Development Assumptions
 Cloud-First Infrastructure: The application assumes constant internet access to communicate with cloud-hosted databases (Supabase and Atlas) to bypass local firewall restrictions.
 
 Stateless Authentication: The server does not track sessions in memory; all authentication state is managed via JWTs stored in the client's localStorage.
@@ -113,7 +114,7 @@ Cross-Database Integrity: Because PostgreSQL and MongoDB are not inherently link
 
 Local Network DNS: To bypass local ISP IPv6 resolution errors (ENOTFOUND), the PostgreSQL connection utilizes IPv4 transaction pooler endpoints.
 
-7. Local Development Setup
+🚀 7. Local Development Setup
 1. Backend Setup
 Bash
 cd backend
